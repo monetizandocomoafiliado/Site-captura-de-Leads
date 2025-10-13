@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método Shopee - 3 Aulas Gratuitas + Bônus</title>
+  <meta name="description" content="Descubra o método secreto para vender R$3.000+ por mês como afiliado da Shopee">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #EE4D2D 0%, #FFBB00 100%);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero-section {
+      background: white;
+      border-radius: 20px;
+      padding: 50px 40px;
+      margin-top: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .badge {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #2d3748;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .highlight {
+      color: #ff6600;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #4a5568;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    /* Hero Image (Product Cover) */
+    .hero-image {
+      display: block;
+      max-width: 100%;
+      width: 500px;
+      height: auto;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image:hover {
+      transform: scale(1.02);
+    }
+
+    .cta-button {
+      background: linear-gradient(135deg, #ff6600 0%, #ff8833 100%);
+      color: white;
+      padding: 18px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 102, 0, 0.4);
+    }
+
+    .benefits {
+      background: #f7fafc;
+      border-radius: 15px;
+      padding: 40px;
+      margin: 40px 0;
+      text-align: left;
+    }
+
+    .benefits h2 {
+      color: #ff6600;
+      font-size: 26px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .benefit-item {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #ff6600;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit-item strong {
+      color: #2d3748;
+      font-size: 18px;
+    }
+
+    .bonus-section {
+      background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+      padding: 30px;
+      border-radius: 15px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .bonus-section h3 {
+      color: #2d3748;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .urgency-box {
+      background: #fff5f5;
+      border: 2px solid #fc8181;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .urgency-box h3 {
+      color: #c53030;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      background: white;
+      margin: 5% auto;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 500px;
+      animation: slideDown 0.4s ease;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 20px;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #2d3748;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #ff6600;
+    }
+
+    .submit-button {
+      width: 100%;
+      background: linear-gradient(135deg, #ff6600 0%, #ff8833 100%);
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .success-section {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: white;
+      border-radius: 20px;
+      margin-top: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .success-icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+
+    .success-section h2 {
+      color: #38a169;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .group-button {
+      background: #14bf14;
+      color: white;
+      padding: 18px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .group-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 30px 0;
+      padding: 20px;
+      background: #f7fafc;
+      border-radius: 10px;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      color: #4a5568;
+      font-weight: 600;
+    }
+
+    /* Honeypot - campo invisível para bots */
+    .honeypot {
+      position: absolute;
+      left: -5000px;
+      top: -5000px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .cta-button {
+        padding: 15px 30px;
+        font-size: 18px;
+      }
+
+      .benefits {
+        padding: 25px 20px;
+      }
+
+      .modal-content {
+        margin: 10% 20px;
+        padding: 30px 20px;
+      }
+
+      .trust-badges {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 3px solid rgba(255, 255, 255, .3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Main Landing Page -->
+    <div id="landingPage" class="hero-section">
+      <!-- Logo -->
+      <img src="https://i.imgur.com/wGm16kV.png" alt="Método Shopee" class="hero-image">
+
+      <div class="badge">🔥 VAGAS LIMITADAS</div>
+
+      <h1>
+        🧠 Já pensou em vender produtos da Shopee <span class="highlight">sem comprar</span>, sem estoque e sem
+        fornecedor?
+      </h1>
+
+      <p class="subtitle">
+        📈 Descubra o método simples que já fez afiliados faturarem mais de R$ 3.000 por mês — mesmo começando do zero.
+      </p>
+
+      <!-- Trust Badges -->
+      <div class="trust-badges">
+        <div class="trust-badge-item">
+          ✅ 100% gratuito
+        </div>
+        <div class="trust-badge-item">
+          ⚡ Acesso imediato
+        </div>
+        <div class="trust-badge-item">
+          🎯 Método validado
+        </div>
+      </div>
+
+      <button class="cta-button" onclick="openModal()">
+        👉 QUERO MINHAS 3 AULAS GRATUITAS + BÔNUS EXCLUSIVO
+      </button>
+
+      <div class="benefits">
+        <h2>📅 O QUE VOCÊ VAI APRENDER NAS 3 AULAS GRATUITAS:</h2>
+
+        <div class="benefit-item">
+          <strong>✅ Aula 1:</strong> Como criar sua conta de afiliado e configurar o link de vendas infalível.
+        </div>
+
+        <div class="benefit-item">
+          <strong>✅ Aula 2:</strong> A anatomia do criativo vencedor — o "clickbait" que converte.
+        </div>
+
+        <div class="benefit-item">
+          <strong>✅ Aula 3:</strong> O passo a passo exato para subir sua primeira campanha e começar a vender.
+        </div>
+
+        <p style="text-align: center; margin-top: 20px; color: #718096; font-style: italic;">
+          💡 Mesmo que você nunca tenha vendido nada antes.
+        </p>
+      </div>
+
+      <div class="bonus-section">
+        <h3>🎁 BÔNUS EXCLUSIVO PARA INSCRITOS:</h3>
+        <p style="font-size: 18px; color: #2d3748; margin-top: 15px;">
+          🎨 <strong>Ícones prontos para os destaques do Instagram!</strong>
+        </p>
+        <p style="color: #4a5568; margin-top: 10px;">
+          Deixe seu perfil profissional e atraente — ideal para afiliados que estão começando e querem passar
+          credibilidade.
+        </p>
+        <p style="color: #718096; font-size: 15px; margin-top: 10px;">
+          📦 Entregue automaticamente junto com as aulas!
+        </p>
+      </div>
+
+      <div class="urgency-box">
+        <h3>⏰ ÚLTIMAS VAGAS GRATUITAS!</h3>
+        <p style="color: #2d3748; font-size: 17px; margin-top: 10px;">
+          Garanta seu acesso agora e receba as 3 aulas + o bônus exclusivo diretamente no seu WhatsApp ou e-mail.
+        </p>
+      </div>
+
+      <button class="cta-button" onclick="openModal()">
+        📲 QUERO ACESSAR AGORA
+      </button>
+    </div>
+
+    <!-- Success Section (hidden initially) -->
+    <div id="successSection" class="success-section">
+      <div class="success-icon">🎉</div>
+      <h2>Parabéns, você garantiu seu acesso!</h2>
+      <p style="font-size: 18px; color: #4a5568; margin: 20px 0;">
+        As 3 aulas gratuitas e o bônus exclusivo estão te esperando no grupo!
+      </p>
+      <p style="font-size: 16px; color: #718096; margin-bottom: 10px;">
+        Clique no botão abaixo para entrar agora:
+      </p>
+      <a href="https://chat.whatsapp.com/D0dlurxHdm0BXP3BKyqbvt" class="group-button" target="_blank">
+        🔗 ENTRAR NO GRUPO EXCLUSIVO
+      </a>
+      <p style="font-size: 14px; color: #a0aec0; margin-top: 20px;">
+        ✨ Nos vemos lá!
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Form -->
+  <div id="leadModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 style="color: #2d3748; text-align: center; margin-bottom: 10px;">
+        🚀 Falta pouco para começar!
+      </h2>
+      <p style="text-align: center; color: #718096; margin-bottom: 25px;">
+        Preencha seus dados para receber acesso imediato
+      </p>
+
+      <form id="leadForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Nome completo *</label>
+          <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">WhatsApp *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="(00) 00000-0000">
+        </div>
+
+        <!-- 🔐 HONEYPOT: Campo invisível para capturar bots -->
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="submit-button" id="submitBtn">
+          ✨ GARANTIR MEU ACESSO GRATUITO
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ⚠️ CONFIGURAÇÃO: Cole sua URL do Google Apps Script
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxa1KB6cyHpw8sjeeKZtHho_qGgqV2uv1PUVkPzVzFi4FP_F3RJAqpREuxCavHnCMGx/exec';
+
+    // 🔐 TOKEN OFUSCADO (decodifica automaticamente)
+    const SECRET_TOKEN = atob('c2hvcGVlX2xhbmRpbmdfc2VjdXJlXzIwMjVfeHl6Nzg5YWJj');
+
+    // Flags de controle
+    let isSubmitting = false;
+    let clickStartedInsideModal = false;
+
+    // Modal functions
+    function openModal() {
+      document.getElementById('leadModal').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('leadModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Detectar onde o mousedown começou
+    document.addEventListener('mousedown', function (event) {
+      const modalContent = document.querySelector('.modal-content');
+      if (modalContent && modalContent.contains(event.target)) {
+        clickStartedInsideModal = true;
+      } else {
+        clickStartedInsideModal = false;
+      }
+    });
+
+    // Close modal APENAS quando clicar FORA
+    window.addEventListener('click', function (event) {
+      const modal = document.getElementById('leadModal');
+      if (event.target === modal && !clickStartedInsideModal) {
+        closeModal();
+      }
+    });
+
+    // 🔐 VALIDAÇÃO DE EMAIL (lado cliente)
+    function isValidEmail(email) {
+      const invalidPatterns = ['test', 'exemplo', 'fake', 'spam', 'benraker', '@test.com'];
+      const emailLower = email.toLowerCase();
+
+      for (const pattern of invalidPatterns) {
+        if (emailLower.includes(pattern)) {
+          return false;
+        }
+      }
+
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // 🔐 VALIDAÇÃO DE TELEFONE (lado cliente)
+    function isValidPhone(phone) {
+      const numbers = phone.replace(/\D/g, '');
+
+      // Bloquear sequências
+      if (numbers.match(/^(.)\1+$/)) return false;
+      if (numbers === '00000000000' || numbers === '11111111111') return false;
+      if (numbers === '33333333333' || numbers === '99999999999') return false;
+      if (numbers.length < 10) return false;
+
+      return true;
+    }
+
+    // Form submission - COM TODAS AS PROTEÇÕES
+    async function handleSubmit(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (isSubmitting) {
+        console.log('Já está enviando, aguarde...');
+        return false;
+      }
+
+      // 🔐 PROTEÇÃO 1: HONEYPOT
+      const honeypot = document.getElementById('website');
+      if (honeypot && honeypot.value !== '') {
+        console.log('🚫 Bot detectado - honeypot preenchido');
+        // Bloqueia silenciosamente sem mostrar erro
+        return false;
+      }
+
+      const nome = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('phone').value;
+
+      // 🔐 PROTEÇÃO 2: VALIDAÇÃO DE EMAIL
+      if (!isValidEmail(email)) {
+        alert('Por favor, use um email válido.');
+        return false;
+      }
+
+      // 🔐 PROTEÇÃO 3: VALIDAÇÃO DE TELEFONE
+      if (!isValidPhone(telefone)) {
+        alert('Por favor, insira um telefone válido.');
+        return false;
+      }
+
+      isSubmitting = true;
+
+      const submitBtn = document.getElementById('submitBtn');
+      const originalText = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="loading"></span> Enviando...';
+
+      // Preparar dados com TOKEN
+      const formData = {
+        token: SECRET_TOKEN, // Token ofuscado
+        nome: nome,
+        email: email,
+        telefone: telefone,
+        timestamp: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+      };
+
+      try {
+        console.log('Enviando lead com proteção...');
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        console.log('Lead enviado com sucesso!');
+
+        // Backup no localStorage (sem token)
+        const backupData = {
+          nome: nome,
+          email: email,
+          telefone: telefone,
+          timestamp: formData.timestamp
+        };
+
+        const allLeads = JSON.parse(localStorage.getItem('leads') || '[]');
+        allLeads.push(backupData);
+        localStorage.setItem('leads', JSON.stringify(allLeads));
+
+        await new Promise(resolve => setTimeout(resolve, 800));
+
+        closeModal();
+        document.getElementById('landingPage').style.display = 'none';
+        document.getElementById('successSection').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('leadForm').reset();
+
+      } catch (error) {
+        console.error('Erro ao enviar:', error);
+
+        closeModal();
+        document.getElementById('landingPage').style.display = 'none';
+        document.getElementById('successSection').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      } finally {
+        setTimeout(() => {
+          isSubmitting = false;
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }, 2000);
+      }
+
+      return false;
+    }
+
+    // Phone mask (Brazilian format)
+    document.getElementById('phone').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+
+      if (value.length > 6) {
+        value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+      } else if (value.length > 2) {
+        value = value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+      } else if (value.length > 0) {
+        value = value.replace(/^(\d*)/, '($1');
+      }
+
+      e.target.value = value;
+    });
+  </script>
+</body>
+
+</html>

@@ -619,55 +619,34 @@
       return true;
     }
 
-    // ═══════════════════════════════════════
-    // 🔍 FUNÇÃO COM DEBUG COMPLETO
-    // ═══════════════════════════════════════
     async function handleSubmit(event) {
       event.preventDefault();
       event.stopPropagation();
 
-      console.log('════════════════════════════════════');
-      console.log('🔍 DEBUG: INÍCIO DO ENVIO');
-      console.log('════════════════════════════════════');
-      console.log('📍 URL do Script:', GOOGLE_SCRIPT_URL);
-      console.log('🔑 Token:', SECRET_TOKEN);
-
       if (isSubmitting) {
-        console.log('❌ Já está enviando, bloqueado');
         return false;
       }
 
       // Honeypot
       const honeypot = document.getElementById('website');
       if (honeypot && honeypot.value !== '') {
-        console.log('🚫 Bot detectado - honeypot:', honeypot.value);
         return false;
       }
-      console.log('✅ Honeypot passou');
 
       const nome = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const telefone = document.getElementById('phone').value;
 
-      console.log('📝 Dados capturados:');
-      console.log('  - Nome:', nome);
-      console.log('  - Email:', email);
-      console.log('  - Telefone:', telefone);
-
       // Validações
       if (!isValidEmail(email)) {
-        console.log('❌ Email inválido:', email);
         alert('Por favor, use um email válido.');
         return false;
       }
-      console.log('✅ Email válido');
 
       if (!isValidPhone(telefone)) {
-        console.log('❌ Telefone inválido:', telefone);
         alert('Por favor, insira um telefone válido.');
         return false;
       }
-      console.log('✅ Telefone válido');
 
       isSubmitting = true;
 
@@ -685,20 +664,8 @@
         timestamp: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
       };
 
-      console.log('📦 Dados completos preparados:', formData);
-      console.log('📤 JSON stringify:', JSON.stringify(formData));
-
       try {
-        console.log('🚀 Iniciando requisição fetch...');
-        console.log('  - URL:', GOOGLE_SCRIPT_URL);
-        console.log('  - Method: POST');
-        console.log('  - Mode: no-cors');
-        console.log('  - Content-Type: text/plain');
-        console.log('  - Body length:', JSON.stringify(formData).length, 'caracteres');
-
-        const startTime = performance.now();
-
-        const response = await fetch(GOOGLE_SCRIPT_URL, {
+        await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
@@ -706,18 +673,6 @@
           },
           body: JSON.stringify(formData)
         });
-
-        const endTime = performance.now();
-        const duration = (endTime - startTime).toFixed(2);
-
-        console.log('✅ Requisição completada em', duration, 'ms');
-        console.log('📨 Response object:', response);
-        console.log('  - Type:', response.type);
-        console.log('  - Status:', response.status);
-        console.log('  - StatusText:', response.statusText);
-        console.log('  - OK:', response.ok);
-        console.log('  - Redirected:', response.redirected);
-        console.log('  - URL:', response.url);
 
         // Backup localStorage
         const backupData = {
@@ -730,11 +685,8 @@
         const allLeads = JSON.parse(localStorage.getItem('leads') || '[]');
         allLeads.push(backupData);
         localStorage.setItem('leads', JSON.stringify(allLeads));
-        console.log('💾 Backup salvo no localStorage');
 
         await new Promise(resolve => setTimeout(resolve, 800));
-
-        console.log('🎉 Sucesso! Redirecionando para tela de sucesso...');
 
         closeModal();
         document.getElementById('landingPage').style.display = 'none';
@@ -743,23 +695,12 @@
         document.getElementById('leadForm').reset();
 
       } catch (error) {
-        console.log('════════════════════════════════════');
-        console.log('❌ ERRO CAPTURADO NO CATCH');
-        console.log('════════════════════════════════════');
-        console.error('Tipo:', error.name);
-        console.error('Mensagem:', error.message);
-        console.error('Stack:', error.stack);
-        console.log('════════════════════════════════════');
-
-        // Mesmo com erro, mostrar sucesso
         closeModal();
         document.getElementById('landingPage').style.display = 'none';
         document.getElementById('successSection').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
       } finally {
-        console.log('🔚 Finalizando função handleSubmit');
-        console.log('════════════════════════════════════\n\n');
         setTimeout(() => {
           isSubmitting = false;
           submitBtn.disabled = false;
@@ -785,14 +726,6 @@
 
       e.target.value = value;
     });
-
-    // 🧪 TESTE: Verificar URL ao carregar página
-    console.log('════════════════════════════════════');
-    console.log('🧪 TESTE DE INICIALIZAÇÃO');
-    console.log('════════════════════════════════════');
-    console.log('URL configurada:', GOOGLE_SCRIPT_URL);
-    console.log('Token configurado:', SECRET_TOKEN ? 'SIM (' + SECRET_TOKEN.length + ' chars)' : 'NÃO');
-    console.log('════════════════════════════════════\n\n');
   </script>
 </body>
 
